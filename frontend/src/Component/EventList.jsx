@@ -65,13 +65,15 @@ const Events = () => {
   const currentEvents = filteredEvents.slice(indexOfFirst, indexOfLast);
   const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
 
-  if (loading) return <p className="p-6">⏳ Loading events...</p>;
+  <p className="p-6 bg-gradient-to-br from-gray-900 via-gray-800  min-h-screen text-xl text-white">
+    ⏳ Loading...
+  </p>;
   if (error)
-    return <p className="p-6 text-red-600 bg-red-100 rounded-md">{error}</p>;
+    return <p className="p-6 text-white bg-gray-600 rounded-md">{error}</p>;
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800 flex items-center gap-2">
+    <div className="p-6  bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen">
+      <h1 className="text-3xl font-bold mb-6 mt-5  text-white flex items-center gap-2">
         🎉 All Events
       </h1>
 
@@ -79,7 +81,7 @@ const Events = () => {
       <input
         type="text"
         placeholder="Search events..."
-        className="border p-3 rounded-lg mb-6 w-full max-w-md focus:ring-2 focus:ring-blue-400"
+        className="border p-3 rounded-lg mb-6 w-full text-white max-w-md focus:ring-2 focus:ring-gray-400"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -92,37 +94,49 @@ const Events = () => {
           {currentEvents.map((event) => (
             <li
               key={event._id}
-              className="bg-white border rounded-2xl shadow-md p-6 flex flex-col justify-between hover:shadow-lg transition"
+              className="bg-gray-800 border border-gray-700 rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition-transform duration-300"
             >
               <div>
-                <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
-                <p className="text-gray-600 mb-3">
+                {/* Event Title */}
+                <h2 className="text-xl font-bold mb-2 text-white">
+                  {event.title}
+                </h2>
+
+                {/* Description */}
+                <p className="text-gray-100 mb-3">
                   {event.description || "No description"}
                 </p>
-                <p className="text-sm text-gray-500">
+
+                {/* Date & Location */}
+                <p className="text-sm text-gray-200 mb-1">
                   📅 {event.date ? new Date(event.date).toDateString() : "N/A"}
                 </p>
-                <p className="text-sm text-gray-500">📍 {event.location}</p>
+                <p className="text-sm text-gray-200">📍 {event.location}</p>
               </div>
-              <div className="mt-4 flex gap-2">
+
+              {/* Action Buttons */}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {/* View Button */}
                 <Link
                   to={`/event/${event._id}`}
-                  className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700"
+                  className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white text-sm px-4 py-2 rounded-lg shadow transition"
                 >
                   👉 View
                 </Link>
+
+                {/* Edit & Delete Buttons (if user owns the event) */}
                 {(event.createdBy?._id === userId ||
                   event.createdBy === userId) && (
                   <>
                     <button
                       onClick={() => navigate(`/event/edit/${event._id}`)}
-                      className="bg-yellow-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-yellow-600"
+                      className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 text-white text-sm px-4 py-2 rounded-lg shadow transition"
                     >
                       ✏️ Edit
                     </button>
                     <button
                       onClick={() => handleDelete(event._id)}
-                      className="bg-red-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-red-700"
+                      className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white text-sm px-4 py-2 rounded-lg shadow transition"
                     >
                       🗑️ Delete
                     </button>

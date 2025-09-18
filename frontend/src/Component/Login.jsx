@@ -20,13 +20,13 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center  bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 justify-center min-h-screen bg-gray-100">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-2xl shadow-lg w-80"
       >
         <h2 className="text-2xl mb-6 font-bold text-center text-gray-800">
-          🔐 Login
+          Login
         </h2>
         <input
           type="email"
@@ -42,7 +42,7 @@ const Login = () => {
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
-        <button className="bg-blue-600 text-white px-4 py-3 rounded-lg w-full">
+        <button className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg w-full">
           Login
         </button>
         <p className="mt-4 text-sm text-center text-gray-500">

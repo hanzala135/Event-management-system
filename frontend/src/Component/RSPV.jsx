@@ -20,8 +20,8 @@ const RSVPs = () => {
   }, []);
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">🎟 My RSVPs</h1>
+    <div className="p-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 min-h-screen">
+      <h1 className="text-3xl font-bold mb-10 m12 text-white">🎟 My RSVPs</h1>
 
       {loading ? (
         <p className="text-gray-500">Loading...</p>
@@ -32,31 +32,38 @@ const RSVPs = () => {
           {rsvps.map((r) => (
             <div
               key={r._id}
-              className="bg-white border rounded-2xl shadow-md p-6 flex flex-col justify-between hover:shadow-lg transition"
+              className="bg-gray-800 border border-gray-700 rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition-transform duration-300"
             >
               <div>
-                <h2 className="text-xl font-semibold mb-2">
+                {/* Event Title */}
+                <h2 className="text-xl font-bold mb-2 text-blue-400">
                   {r.eventId?.title || "Event Title"}
                 </h2>
-                <p className="text-gray-600 mb-2">
+
+                {/* Event Date */}
+                <p className="text-gray-300 mb-2">
                   📅{" "}
                   {r.eventId?.date
                     ? new Date(r.eventId.date).toLocaleString()
                     : "No date"}
                 </p>
+
+                {/* Status Badge */}
                 <span
                   className={`px-3 py-1 text-sm font-medium rounded-full ${
                     r.status === "Attending"
-                      ? "bg-green-100 text-green-700"
-                      : "bg-red-100 text-red-700"
+                      ? "bg-green-600 text-white"
+                      : "bg-red-600 text-white"
                   }`}
                 >
                   {r.status}
                 </span>
               </div>
+
+              {/* View Event Button */}
               <Link
                 to={`/event/${r.eventId?._id}`}
-                className="mt-4 inline-block text-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                className="mt-4 inline-block text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-4 py-2 rounded-lg shadow transition"
               >
                 View Event
               </Link>

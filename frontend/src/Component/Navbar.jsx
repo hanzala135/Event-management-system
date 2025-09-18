@@ -12,43 +12,81 @@ const Navbar = () => {
     }`;
 
   return (
-    <nav className="bg-gray-900 p-4 text-white flex justify-between items-center shadow-lg">
-      <Link to="/dashboard" className="font-bold text-lg text-blue-500">
-        ⚡ Event Manager
-      </Link>
-      <div className="flex items-center space-x-4">
-        {user ? (
+    <nav className="bg-gradient-to-r from-gray-800 via-gray-900/60 to-gray-800/80 backdrop-blur-md p-6 shadow-lg flex items-center justify-between text-white">
+      {/* Left Logo */}
+      <div className="flex items-center">
+        <Link
+          to="/dashboard"
+          className="font-bold text-2xl text-white
+        "
+        >
+          ⚡ Event Manager
+        </Link>
+      </div>
+
+      {/* Center Menu */}
+
+      {user ? (
+        <div className="flex-1 flex justify-center space-x-8">
           <>
-            <span className="text-gray-300">
-              👋 {user.user?.name || "User"}
-            </span>
-            <Link to="/dashboard" className={linkClasses("/dashboard")}>
+            <Link
+              to="/dashboard"
+              className="text-white font-medium hover:text-blue-500 transition"
+            >
               Dashboard
             </Link>
-            <Link to="/create-event" className={linkClasses("/create-event")}>
+            <Link
+              to="/create-event"
+              className="text-white font-medium hover:text-blue-500 transition"
+            >
               Create
             </Link>
-            <Link to="/events" className={linkClasses("/events")}>
+            <Link
+              to="/events"
+              className="text-white  font-medium hover:text-blue-500 transition"
+            >
               Events
             </Link>
-            <Link to="/rsvps" className={linkClasses("/rsvps")}>
+            <Link
+              to="/rsvps"
+              className="text-white  font-medium hover:text-blue-500 transition"
+            >
               RSVPs
             </Link>
+          </>
+        </div>
+      ) : (
+        <div className="flex items-center space-x-4">
+          <>
+            <Link
+              to="/login"
+              className="bg-white text-black px-4 py-2 rounded-lg shadow-md hover:bg-black hover:text-white  cursor:pointer transition"
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="bg-white text-black px-4 py-2 rounded-lg shadow-md hover:bg-black hover:text-white  cursor:pointer transition"
+            >
+              Register
+            </Link>
+          </>
+        </div>
+      )}
+
+      {/* Right Button + Username */}
+      <div className="flex items-center space-x-4">
+        {user && (
+          <>
+            <span className="text-white  text-2xl font-medium">
+              Hi, {user.user?.name || "User"} 👋
+            </span>
             <button
               onClick={logout}
-              className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded transition"
+              className="bg-white text-black px-4 py-2 rounded-lg shadow-md hover:bg-black hover:text-white  cursor:pointer transition"
             >
               Logout
             </button>
-          </>
-        ) : (
-          <>
-            <Link to="/login" className={linkClasses("/login")}>
-              Login
-            </Link>
-            <Link to="/register" className={linkClasses("/register")}>
-              Register
-            </Link>
           </>
         )}
       </div>

@@ -24,12 +24,12 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-br from-blue-100 via-white to-blue-50">
+    <div className="flex items-center justify-center h-screen   bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 ">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-2xl shadow-2xl w-96 hover:scale-[1.02] transition"
       >
-        <h2 className="text-3xl mb-6 font-extrabold text-center text-blue-700">
+        <h2 className="text-3xl mb-6 font-extrabold text-center text-gray-700">
           Create Event
         </h2>
 
@@ -67,7 +67,7 @@ const CreateEvent = () => {
           required
         />
 
-        <button className="bg-blue-600 text-white px-4 py-3 rounded-lg w-full hover:bg-blue-700">
+        <button className="bg-gray-600 text-white px-4 py-3 rounded-lg w-full hover:bg-gray-700 hover:scale-[1.02] transition hover:cursor-pointer">
           🚀 Create Event
         </button>
       </form>

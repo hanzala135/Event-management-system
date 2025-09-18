@@ -27,7 +27,7 @@ function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 px-4">
+    <div className="flex justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 items-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 px-4">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md"
@@ -76,7 +76,7 @@ function Register() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-green-500 hover:bg-green-600 disabled:opacity-60 text-white py-3 rounded-xl font-semibold transition duration-300"
+          className="w-full bg-gray-500 hover:bg-gray-600 disabled:opacity-60 text-white py-3 rounded-xl font-semibold transition duration-300"
         >
           {loading ? "Signing up..." : "Sign Up"}
         </button>
