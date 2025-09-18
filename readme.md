@@ -1,28 +1,26 @@
-
-
 # Event Management System
 
 A **full-stack Event Management System** built with the **MERN stack** (**MongoDB, Express, React, Node.js**).
 Features include:
 
-* User authentication
-* Event creation & management
-* Event registration
-* Dashboards for users
-* Responsive UI for seamless event organization
+- User authentication
+- Event creation & management
+- Event registration
+- Dashboards for users
+- Responsive UI for seamless event organization
 
 ---
 
 ## \:rocket: Tech Stack
 
-* **Frontend:**  Vite, JavaScript, Tailwind CSS
-* **Backend:** Node.js, Express, MongoDB, Mongoose
-* **Authentication:** JWT, bcryptjs
-* **Others:** Axios, CORS, dotenv 
+- **Frontend:** React,Vite, JavaScript, Tailwind CSS
+- **Backend:** Node.js, Express, MongoDB, Mongoose
+- **Authentication:** JWT, bcryptjs
+- **Others:** Axios, CORS, dotenv
 
 ---
 
-## \:milky\_way: Backend Setup (Node.js + Express + MongoDB)
+## \:milky_way: Backend Setup (Node.js + Express + MongoDB)
 
 1. **Create project folder**
 
@@ -92,7 +90,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
 ```
 
 4. **Add Tailwind directives** to `src/index.css`:
@@ -116,25 +114,21 @@ npm run build    # production build
 
 ## \:zap: Running Both Backend & Frontend
 
-* **Backend server:** e.g., `localhost:3000`
-* **Frontend dev server:** default `localhost:5173`
+- **Backend server:** e.g., `localhost:3000`
+- **Frontend dev server:** default `localhost:5173`
 
 ---
 
-## \:white\_check\_mark: Scripts Overview
+## \:white_check_mark: Scripts Overview
 
 **Backend**
 
-| Script        | Description                             |
-| ------------- | --------------------------------------- |
-| `npm start` | Start server with nodemon (development)   |
+| Script      | Description                             |
+| ----------- | --------------------------------------- |
+| `npm start` | Start server with nodemon (development) |
 
 **Frontend**
 
-| Script          | Description                   |
-| --------------- | ----------------------------- |
-| `npm run dev`   | Start Vite dev server         |
-
-
-
-
+| Script        | Description           |
+| ------------- | --------------------- |
+| `npm run dev` | Start Vite dev server |
