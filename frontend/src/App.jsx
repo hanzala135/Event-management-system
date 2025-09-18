@@ -8,8 +8,8 @@ import Events from "./Component/Eventlist";
 import CreateEvent from "./Component/CreateEvent";
 import EventDetail from "./Component/EventDetail";
 import RSVPs from "./Component/RSPV";
-import ProtectedRoute from "./Component/ProtectedRoute";
-import { AuthProvider } from "./Component/AuthContext";
+import { AuthProvider } from "./store/AuthContext";
+import ProtectedRoute from "./store/ProtectedRoute";
 import EditEvent from "./Component/EditEvent";
 
 function App() {

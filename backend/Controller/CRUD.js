@@ -79,10 +79,9 @@ const deleteEvent = async (req, res) => {
   }
 };
 
-// Controller/CRUD.js
-// make sure Event model is imported
 
-// existing exports: getEvents, createEvent, updateEvent, deleteEvent
+
+
 
 const getEventById = async (req, res) => {
   try {

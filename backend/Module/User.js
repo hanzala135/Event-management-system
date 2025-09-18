@@ -19,7 +19,7 @@ const userSchema = new Schema(
       required: true,
       validate: {
         validator: function (v) {
-          return v.length >= 8; // ✅ check length
+          return v.length >= 8; // check length
         },
         message: "Password must be at least 8 characters long.",
       },
@@ -28,7 +28,7 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-// ✅ Correct hook
+//  Correct hook
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
     const salt = await bcrypt.genSalt(10);

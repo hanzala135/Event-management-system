@@ -1,4 +1,5 @@
 const RSVP = require("../Module/RSPV");
+//function to Create RSVP
 
 const createRSVP = async (req, res) => {
   try {
@@ -13,7 +14,6 @@ const createRSVP = async (req, res) => {
 
     let rsvp = await RSVP.findOne({ userId, eventId: id });
 
-    console.log("Existing RSVP:", rsvp);
     if (rsvp) {
       rsvp.status = status;
       await rsvp.save();
@@ -34,13 +34,14 @@ const createRSVP = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error", error });
   }
 };
+// Function to get all RSVP
 
 const getRSVPs = async (req, res) => {
   try {
     const rsvps = await RSVP.find({ userId: req.user.id }).populate(
       "eventId",
       "title date description"
-    ); 
+    );
 
     return res.status(200).json({ success: 1, rsvps });
   } catch (error) {

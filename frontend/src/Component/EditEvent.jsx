@@ -32,7 +32,9 @@ const EditEvent = () => {
   }, [id]);
 
   const handleChange = (e) => {
-    setEvent({ ...event, [e.target.name]: e.target.value });
+    setEvent({ ...event, [e.target.name]: e.target.value 
+    
+    });
   };
 
   const handleSubmit = async (e) => {

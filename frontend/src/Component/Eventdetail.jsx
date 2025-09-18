@@ -65,7 +65,7 @@ const EventDetail = () => {
               ✅ Attending
             </button>
             <button
-              onClick={() => handleRSVP("Not Attending")}
+              onClick={() => handleRSVP("non-Attended")}
               className="px-5 py-2 bg-gray-300 text-gray-900 rounded-lg hover:bg-gray-400"
             >
               ❌ Not Attending

@@ -1,5 +1,6 @@
 const User = require("../Module/User");
 
+//FUNCTION TO REGISTER USER
 const registerUser = async (req, res) => {
   let { name, email, password } = req.body;
 
