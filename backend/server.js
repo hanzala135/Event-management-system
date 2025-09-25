@@ -11,7 +11,10 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://your-frontend.vercel.app"],
+   origin: [
+      "https://event-management-system-pvh1.vercel.app", // your frontend
+      "http://localhost:5173" // keep for local dev
+    ],
     credentials: true,
   })
 );
