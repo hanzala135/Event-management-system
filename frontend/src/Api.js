@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: "https://event-management-system-ixg1.vercel.app/hanzala",
+const API = axios.create({ 
+  baseURL: "https://event-management-system-red-two.vercel.app/hanzala" 
 });
-
 // Attach token automatically
 API.interceptors.request.use((req) => {
   const user = JSON.parse(localStorage.getItem("user"));
