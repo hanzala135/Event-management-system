@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://your-backend.vercel.app/hanzala",
+  baseURL: "https://event-management-system-ixg1.vercel.app/hanzala",
 });
 
 // Attach token automatically
