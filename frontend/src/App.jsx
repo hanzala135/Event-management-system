@@ -7,7 +7,7 @@ import Dashboard from "./Component/Dashboard";
 
 import Events from "./Component/Event_List";
 import CreateEvent from "./Component/CreateEvent";
-import EventDetail from "./Component/EventDetail";
+import EventDetail from "./Component/Eventdetail";
 import RSVPs from "./Component/RSPV";
 import { AuthProvider } from "./store/AuthContext";
 import ProtectedRoute from "./store/ProtectedRoute";
