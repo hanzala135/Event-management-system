@@ -1,7 +1,8 @@
 import axios from "axios";
 
-
-const API = axios.create({ baseURL: "http://localhost:3000/hanzala" });
+const API = axios.create({
+  baseURL: "https://your-backend.vercel.app/hanzala",
+});
 
 // Attach token automatically
 API.interceptors.request.use((req) => {
@@ -15,10 +16,9 @@ API.interceptors.request.use((req) => {
 export const registerUser = (data) => API.post("/register", data);
 export const loginUser = (data) => API.post("/login", data);
 
-
 // ================= Events =================
-export const getEvents = () => API.get("/Events"); 
-export const getEvent = (id) => API.get(`/details/${id}`); 
+export const getEvents = () => API.get("/Events");
+export const getEvent = (id) => API.get(`/details/${id}`);
 export const createEvent = (data) => API.post("/createEvent", data);
 export const updateEvent = (id, data) => API.put(`/updateEvent/${id}`, data);
 export const deleteEvent = (id) => API.delete(`/deleteEvent/${id}`);
