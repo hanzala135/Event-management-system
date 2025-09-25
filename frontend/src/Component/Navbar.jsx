@@ -81,12 +81,13 @@ const Navbar = () => {
             <span className="text-white  text-2xl font-medium">
               Hi, {user.user?.name || "User"} 👋
             </span>
-            <button
+            <Link
+            to="/login"
               onClick={logout}
               className="bg-white text-black px-4 py-2 rounded-lg shadow-md hover:bg-black hover:text-white  cursor:pointer transition"
             >
               Logout
-            </button>
+            </Link>
           </>
         )}
       </div>
