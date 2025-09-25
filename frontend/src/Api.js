@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({ 
-  baseURL: "https://event-management-system-gamma-nine.vercel.app//hanzala" 
+  baseURL: "https://event-management-system-gamma-nine.vercel.app/hanzala" 
 });
 // Attach token automatically
 API.interceptors.request.use((req) => {
