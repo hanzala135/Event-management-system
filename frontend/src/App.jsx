@@ -4,7 +4,8 @@ import Navbar from "./Component/Navbar";
 import Register from "./Component/Signup";
 import Login from "./Component/Login";
 import Dashboard from "./Component/Dashboard";
-import Events from "./Component/Eventlist";
+
+import Events from "./Component/Event_List";
 import CreateEvent from "./Component/CreateEvent";
 import EventDetail from "./Component/EventDetail";
 import RSVPs from "./Component/RSPV";
